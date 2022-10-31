@@ -1,4 +1,4 @@
-def userId = User.current().getId()
+def userId = "bala"
 
 echo  "$userId"
 
