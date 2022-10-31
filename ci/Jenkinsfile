@@ -1,9 +1,8 @@
 def userId = System.getenv("USERNAME")
 
-def fruit_fans = '["bala","bob","zoe"]'
+def fruit_fans = '["BALA-POORNIMA$","bob","zoe"]'
 
 def choices = []
-
 def code = sprintf("""
 if ( "%s" in %s) {
     choices = ["Apple","Banana","Cherry"]
