@@ -5,7 +5,7 @@ def fruit_fans = '[ "bala","bob","zoe"]'
 def choices = []
 
 def code = sprintf("""
-if  (fruit_fans.contains(userId)) {
+if  (fruit_fans.contains($userId)) {
     choices = ["Apple","Banana","Cherry"]
 } else {
     choices = ["Amaranth","Beet","Cabbage"]
