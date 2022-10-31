@@ -1,6 +1,6 @@
 def userId = System.getenv("USERNAME")
 
-def fruit_fans = '["BALA-POORNIMA$","bob","zoe"]'
+def fruit_fans = '["BALA-POORNIMA","bob","zoe"]'
 
 def choices = []
 def code = sprintf("""
