@@ -1,16 +1,14 @@
-def userId = "bala"
-
-echo  "$userId"
-
-def fruit_fans = '[ "$userId","bob","zoe"]'
-
-def choices = []
-if  (fruit_fans.contains("$userId")) {
+def userId = currentBuild.getBuildCauses('hudson.model.Cause$UserIdCause')[0].userId
+fruit_fans = '["ann","bob","zoe"]'
+def code = sprintf("""
+if ( "%s" in %s) {
     choices = ["Apple","Banana","Cherry"]
 } else {
     choices = ["Amaranth","Beet","Cabbage"]
 }
 
+return choices
+""",userId,fruit_fans)
 
 properties([
     parameters([
@@ -31,14 +29,13 @@ properties([
                 ],
                 script: [classpath: [],
                     sandbox: false,
-                    script: 'return $choices'
+                    script: code
                 ]
             ]
 
         ]
     ])
 ])
-
 node {
     stage("Show Selection"){
         echo "$userId selected $food" 
