@@ -1,10 +1,11 @@
 def userId = System.getenv("USERNAME")
 
-def fruit_fans = '["BALA-POORNIMA","bob","zoe"]'
+def fruit_fans = '[ userId,"bob","zoe"]'
 
 def choices = []
+
 def code = sprintf("""
-if ( "%s" in %s) {
+if  (fruit_fans.contains(userId)) {
     choices = ["Apple","Banana","Cherry"]
 } else {
     choices = ["Amaranth","Beet","Cabbage"]
