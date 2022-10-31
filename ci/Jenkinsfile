@@ -1,5 +1,5 @@
 def userId = currentBuild.getBuildCauses('hudson.model.Cause$UserIdCause')[0].userId
-fruit_fans = '[$userId, "ann","bob","zoe"]'
+fruit_fans = '["$userId", "ann","bob","zoe"]'
 def code = sprintf("""
 if ( "%s" in %s) {
     choices = ["Apple","Banana","Cherry"]
