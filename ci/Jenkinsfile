@@ -1,6 +1,9 @@
-def userId = currentBuild.getBuildCauses('hudson.model.Cause$UserIdCause')[0].userId
+def userId = System.getenv("USERNAME")
 
-fruit_fans = '["ann","bob","zoe"]'
+def fruit_fans = '["BALA-POORNIMA$","bob","zoe"]'
+
+def choices = []
+
 def code = sprintf("""
 if ( "%s" in %s) {
     choices = ["Apple","Banana","Cherry"]
