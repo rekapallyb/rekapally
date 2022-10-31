@@ -1,4 +1,8 @@
-def userId = System.getenv("USERNAME")
+def userId = ""
+wrap([$class: 'BuildUser']) {
+    userId = env.BUILD_USER_ID
+  }
+echo  "$userId"
 
 def fruit_fans = '[ "$userId","bob","zoe"]'
 
